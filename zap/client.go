@@ -117,9 +117,6 @@ func (c *Client) request(path string, queryParams map[string]string) ([]byte, er
 	// add url query parameter
 	query := req.URL.Query()
 	for k, v := range queryParams {
-		if v == "" {
-			continue
-		}
 		query.Add(k, v)
 	}
 	req.URL.RawQuery = query.Encode()
